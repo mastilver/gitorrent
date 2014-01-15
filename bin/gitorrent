@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var git = require(__dirname + '/../lib/git.js');
+
+
+
+/*     DAEMON SETUP     */
+
+// starting daemon if it's not running
+program.command('start')
+.description('run the daemon')
+.action(function()
+{
+
+});
+
+// stopping daemon
+program.command('stop')
+.description('stop the daemon (if running)')
+.action(function()
+{
+
+});
+
+
+// restarting daemon
+program.command('restart')
+.description('restart the daemon (if running)')
+.action(function()
+{
+
+});
+
+/*     END DAEMON SETUP     */
+
+
+
+// add a repository
+program.command('add <git>')
+.description('add a new gitorrent')
+.action(function(gitUrl)
+{
+	git.add(gitUrl, function(err)
+	{
+		
+	});
+});
+
+
+
+program.parse(process.argv);
